@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Henrique Ulbricht - Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600&amp;family=Hanken+Grotesk:wght@400&amp;family=Montserrat:wght@700;900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed-variant": "#930000",
+                      "surface-variant": "#333535",
+                      "tertiary-fixed": "#e5e2e1",
+                      "surface-container-low": "#1a1c1c",
+                      "on-tertiary": "#313030",
+                      "surface-dim": "#121414",
+                      "on-tertiary-container": "#dbd8d7",
+                      "error": "#ffb4ab",
+                      "primary": "#ffb4a8",
+                      "on-primary-fixed": "#410000",
+                      "inverse-surface": "#e2e2e2",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "on-error": "#690005",
+                      "primary-fixed": "#ffdad4",
+                      "secondary-container": "#ffdb3c",
+                      "surface-bright": "#37393a",
+                      "secondary-fixed-dim": "#e9c400",
+                      "tertiary-container": "#5f5e5e",
+                      "surface": "#121414",
+                      "surface-container-highest": "#333535",
+                      "secondary": "#fff9ef",
+                      "on-primary": "#690000",
+                      "on-primary-container": "#ffcdc5",
+                      "on-secondary": "#3a3000",
+                      "on-secondary-container": "#725f00",
+                      "surface-container": "#1e2020",
+                      "background": "#121414",
+                      "on-background": "#e2e2e2",
+                      "on-secondary-fixed-variant": "#544600",
+                      "primary-container": "#c00000",
+                      "secondary-fixed": "#ffe16d",
+                      "surface-container-lowest": "#0c0f0f",
+                      "outline-variant": "#5d3f3b",
+                      "on-error-container": "#ffdad6",
+                      "inverse-primary": "#c00000",
+                      "outline": "#ad8882",
+                      "primary-fixed-dim": "#ffb4a8",
+                      "surface-container-high": "#282a2b",
+                      "tertiary-fixed-dim": "#c9c6c5",
+                      "surface-tint": "#ffb4a8",
+                      "on-surface-variant": "#e7bdb6",
+                      "inverse-on-surface": "#2f3131",
+                      "error-container": "#93000a",
+                      "tertiary": "#c9c6c5",
+                      "on-surface": "#e2e2e2",
+                      "on-secondary-fixed": "#221b00",
+                      "on-tertiary-fixed-variant": "#474646"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "margin-desktop": "80px",
+                      "gutter": "24px",
+                      "margin-mobile": "20px",
+                      "container-max": "1440px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-caps": [
+                              "Geist"
+                      ],
+                      "headline-lg": [
+                              "Montserrat"
+                      ],
+                      "display-lg": [
+                              "Montserrat"
+                      ],
+                      "body-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "mono-data": [
+                              "Geist"
+                      ],
+                      "headline-md": [
+                              "Montserrat"
+                      ],
+                      "display-lg-mobile": [
+                              "Montserrat"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.15em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "72px",
+                              {
+                                      "lineHeight": "80px",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "900"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "mono-data": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "40px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "900"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #050505;
+            color: #e2e2e2;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* 4D Glassmorphism Panel */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 215, 0, 0.3); /* Metallic Gold hint */
+            box-shadow: 0 8px 32px 0 rgba(192, 0, 0, 0.15); /* Subtle Red Glow */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-panel::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Neon Red Glow for interactive elements */
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(192, 0, 0, 0.5), inset 0 0 10px rgba(192, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .neon-glow:hover {
+            box-shadow: 0 0 30px rgba(192, 0, 0, 0.8), inset 0 0 20px rgba(192, 0, 0, 0.4);
+        }
+
+        /* Gold Gradient Button */
+        .btn-gold {
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+            color: #050505;
+            border: none;
+            position: relative;
+            z-index: 10;
+        }
+        .btn-gold:hover {
+            box-shadow: 0 0 20px rgba(192, 0, 0, 0.6); /* Red hover effect on gold */
+        }
+
+        /* Ghost Button */
+        .btn-ghost {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid #C00000;
+            color: #e2e2e2;
+            backdrop-filter: blur(10px);
+        }
+        .btn-ghost:hover {
+            background: rgba(192, 0, 0, 0.1);
+            box-shadow: 0 0 15px rgba(192, 0, 0, 0.3);
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Playing Card / Casino Chip Styles */
+        .card-suit {
+            font-size: 2rem;
+            color: #FFD700;
+            opacity: 0.8;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        .casino-chip {
+            border-radius: 50%;
+            border: 2px dashed #C00000;
+            background: #121414;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(192, 0, 0, 0.2);
+        }
+        
+        .casino-chip-small {
+            border-radius: 50%;
+            border: 1px dashed #C00000;
+            background: rgba(18, 20, 20, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            box-shadow: 0 0 10px rgba(192, 0, 0, 0.3);
+        }
+
+        /* Typing cursor */
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: #C00000;
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        /* Floating particles */
+        #particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Background Shader Fixed Container */
+        .shader-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.4;
+        }
+        
+        /* Timeline specific */
+        .timeline-line {
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #C00000, #FFD700);
+            opacity: 0.3;
+        }
+        @media (min-width: 768px) {
+            .timeline-line {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased relative selection:bg-primary-container selection:text-white">
+<!-- Background Shader -->
+<div class="shader-bg fixed inset-0 w-full h-full">
+<canvas id="shader-canvas-ANIMATION_2" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_2');
+
+  function syncSize() {
+    const w = canvas.clientWidth  || window.innerWidth;
+    const h = canvas.clientHeight || window.innerHeight;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+  window.addEventListener('resize', syncSize);
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+
+float random(vec2 st) {
+    return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);
+}
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 mouse = u_mouse / u_resolution;
+    
+    // Base dark color
+    vec3 color = vec3(0.02, 0.02, 0.02);
+    
+    // Moving red nebulas/glows
+    float n1 = sin(uv.x * 3.0 + u_time * 0.5) * cos(uv.y * 2.0 - u_time * 0.3);
+    float n2 = cos(uv.x * 2.0 - u_time * 0.4) * sin(uv.y * 4.0 + u_time * 0.6);
+    
+    vec3 redGlow = vec3(0.75, 0.0, 0.0) * (n1 * n2 * 0.5 + 0.5);
+    color += redGlow * 0.15;
+    
+    // Golden sparks/particles
+    vec2 grid = floor(uv * 40.0);
+    vec2 fuv = fract(uv * 40.0);
+    float rand = random(grid);
+    if (rand > 0.98) {
+        float pulse = sin(u_time * 2.0 + rand * 10.0) * 0.5 + 0.5;
+        float spark = (1.0 - length(fuv - 0.5)) * pulse;
+        color += vec3(1.0, 0.84, 0.0) * pow(spark, 10.0) * 0.8;
+    }
+    
+    // Mouse interaction glow
+    float dist = length(uv - mouse);
+    float mouseGlow = exp(-dist * 5.0);
+    color += vec3(0.75, 0.0, 0.0) * mouseGlow * 0.2;
+    
+    // Subtle horizontal scanlines
+    float scanline = sin(uv.y * u_resolution.y * 0.5) * 0.02;
+    color -= scanline;
+
+    gl_FragColor = vec4(color, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<div id="particles-container"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/10 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0px_15px_40px_rgba(192,0,0,0.2)]">
+<div class="flex justify-between items-center px-margin-desktop py-unit max-w-container-max mx-auto h-20">
+<a class="font-display-lg text-headline-md tracking-tighter text-on-surface hover:text-primary-fixed-dim transition-all duration-300 scale-95 active:scale-90 transition-transform" href="#">
+                Henrique Ulbricht
+            </a>
+<div class="hidden md:flex gap-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#studies">Studies</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#skills">Skills</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#projects">Projects</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#timeline">Timeline</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact</a>
+</div>
+<button class="hidden md:block btn-gold font-label-caps text-label-caps px-6 py-3 rounded-full transition-all duration-300 scale-95 active:scale-90">
+                Hire Me
+            </button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="relative z-10 pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto space-y-[120px]">
+<!-- Hero Section -->
+<section class="min-h-[819px] flex flex-col justify-center items-start reveal active relative" id="hero">
+<div class="glass-panel p-12 rounded-xl max-w-3xl border-l-4 border-l-primary-container">
+<span class="font-mono-data text-mono-data text-secondary-fixed mb-4 block">PORTFOLIO ACADÊMICO</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6 leading-tight">
+<span id="typewriter"></span><span class="cursor"> </span>
+</h1>
+<div class="space-y-2 mb-10 border-l-2 border-outline-variant/50 pl-4">
+<p class="font-body-lg text-body-lg text-on-surface-variant">Aluno: Henrique Ulbricht</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Instituição: SENAI Ary Torres</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Orientador: Prof. Toniati</p>
+</div>
+<div class="flex flex-wrap gap-4">
+<a class="btn-gold font-label-caps text-label-caps px-8 py-4 rounded flex items-center gap-2" href="#projects">
+                        Ver Portfólio <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="btn-ghost font-label-caps text-label-caps px-8 py-4 rounded flex items-center gap-2" href="#studies">
+                        Explorar Projetos <span class="material-symbols-outlined text-[18px]">search</span>
+</a>
+</div>
+</div>
+<!-- Decorative Casino Chip Element -->
+<div class="absolute -right-20 top-20 w-64 h-64 opacity-20 pointer-events-none hidden md:block">
+<div class="casino-chip w-full h-full border-4">
+<div class="w-48 h-48 rounded-full border-2 border-dashed border-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-display-lg text-secondary-fixed">casino</span>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="reveal scroll-mt-32" id="about">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<h2 class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container">info</span> Perfil Técnico
+                    </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        Focado no desenvolvimento de soluções de Inteligência Artificial, automação de processos e criação de chatbots avançados. Combinando rigor acadêmico com inovação prática para resolver problemas complexos através de programação estruturada.
+                    </p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="glass-panel p-6 rounded-lg text-center hover:neon-glow transition-all duration-300">
+<span class="font-display-lg text-headline-lg text-secondary-fixed block mb-2">48h</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Formação</span>
+</div>
+<div class="glass-panel p-6 rounded-lg text-center hover:neon-glow transition-all duration-300">
+<span class="font-display-lg text-headline-lg text-secondary-fixed block mb-2">10+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Tecnologias</span>
+</div>
+<div class="glass-panel p-6 rounded-lg text-center hover:neon-glow transition-all duration-300 col-span-2">
+<span class="material-symbols-outlined text-headline-lg text-primary-container mb-2">workspace_premium</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant block">Certificação SENAI</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="reveal scroll-mt-32" id="skills">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-12 flex items-center gap-3 border-b border-outline-variant/30 pb-4">
+<span class="material-symbols-outlined text-primary-container">psychology_alt</span> Habilidades &amp; Tecnologias
+</h2>
+<div class="glass-panel rounded-xl p-8 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+<div class="space-y-2">
+<div class="flex justify-between font-label-caps text-label-caps text-on-surface-variant"><span>Python</span><span class="text-secondary-fixed">95%</span></div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden"><div class="bg-primary-container h-2 rounded-full shadow-[0_0_10px_rgba(192,0,0,0.8)]" style="width: 95%"></div></div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between font-label-caps text-label-caps text-on-surface-variant"><span>Machine Learning</span><span class="text-secondary-fixed">85%</span></div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden"><div class="bg-primary-container h-2 rounded-full shadow-[0_0_10px_rgba(192,0,0,0.8)]" style="width: 85%"></div></div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between font-label-caps text-label-caps text-on-surface-variant"><span>Deep Learning (CNNs)</span><span class="text-secondary-fixed">80%</span></div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden"><div class="bg-primary-container h-2 rounded-full shadow-[0_0_10px_rgba(192,0,0,0.8)]" style="width: 80%"></div></div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between font-label-caps text-label-caps text-on-surface-variant"><span>Natural Language Processing</span><span class="text-secondary-fixed">90%</span></div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden"><div class="bg-primary-container h-2 rounded-full shadow-[0_0_10px_rgba(192,0,0,0.8)]" style="width: 90%"></div></div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between font-label-caps text-label-caps text-on-surface-variant"><span>Prompt Engineering</span><span class="text-secondary-fixed">98%</span></div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden"><div class="bg-primary-container h-2 rounded-full shadow-[0_0_10px_rgba(192,0,0,0.8)]" style="width: 98%"></div></div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between font-label-caps text-label-caps text-on-surface-variant"><span>Data Analysis</span><span class="text-secondary-fixed">88%</span></div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden"><div class="bg-primary-container h-2 rounded-full shadow-[0_0_10px_rgba(192,0,0,0.8)]" style="width: 88%"></div></div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between font-label-caps text-label-caps text-on-surface-variant"><span>OpenAI GPT &amp; Whisper</span><span class="text-secondary-fixed">92%</span></div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden"><div class="bg-primary-container h-2 rounded-full shadow-[0_0_10px_rgba(192,0,0,0.8)]" style="width: 92%"></div></div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between font-label-caps text-label-caps text-on-surface-variant"><span>Blockchain Integration</span><span class="text-secondary-fixed">75%</span></div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden"><div class="bg-primary-container h-2 rounded-full shadow-[0_0_10px_rgba(192,0,0,0.8)]" style="width: 75%"></div></div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between font-label-caps text-label-caps text-on-surface-variant"><span>Git &amp; Version Control</span><span class="text-secondary-fixed">90%</span></div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden"><div class="bg-primary-container h-2 rounded-full shadow-[0_0_10px_rgba(192,0,0,0.8)]" style="width: 90%"></div></div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between font-label-caps text-label-caps text-on-surface-variant"><span>Web Scraping</span><span class="text-secondary-fixed">85%</span></div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden"><div class="bg-primary-container h-2 rounded-full shadow-[0_0_10px_rgba(192,0,0,0.8)]" style="width: 85%"></div></div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="reveal scroll-mt-32" id="projects">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-12 flex items-center gap-3 border-b border-outline-variant/30 pb-4">
+<span class="material-symbols-outlined text-primary-container">category</span> Projetos (Projects)
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Project 1 -->
+<div class="glass-panel rounded-xl p-8 group hover:-translate-y-2 transition-transform duration-300 hover:neon-glow">
+<div class="flex justify-between items-start mb-6">
+<div class="casino-chip-small group-hover:rotate-180 transition-transform duration-500"><span class="material-symbols-outlined text-secondary-fixed">visibility</span></div>
+<span class="font-mono-data text-[12px] text-primary-container border border-primary-container px-2 py-1 rounded">Computer Vision</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Deep Learning Vision System</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Image recognition with CNNs. Identificação e classificação de padrões visuais complexos.</p>
+</div>
+<!-- Project 2 -->
+<div class="glass-panel rounded-xl p-8 group hover:-translate-y-2 transition-transform duration-300 hover:neon-glow">
+<div class="flex justify-between items-start mb-6">
+<div class="casino-chip-small group-hover:rotate-180 transition-transform duration-500"><span class="material-symbols-outlined text-secondary-fixed">chat</span></div>
+<span class="font-mono-data text-[12px] text-primary-container border border-primary-container px-2 py-1 rounded">NLP</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Natural Language Processor</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Text analysis and summarization. Extração de sentimentos e sumarização automática de textos.</p>
+</div>
+<!-- Project 3 -->
+<div class="glass-panel rounded-xl p-8 group hover:-translate-y-2 transition-transform duration-300 hover:neon-glow">
+<div class="flex justify-between items-start mb-6">
+<div class="casino-chip-small group-hover:rotate-180 transition-transform duration-500"><span class="material-symbols-outlined text-secondary-fixed">monitoring</span></div>
+<span class="font-mono-data text-[12px] text-primary-container border border-primary-container px-2 py-1 rounded">Fintech</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Automated Trading Bot</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Python-based market analysis. Algoritmos preditivos para análise de tendências financeiras.</p>
+</div>
+<!-- Project 4 -->
+<div class="glass-panel rounded-xl p-8 group hover:-translate-y-2 transition-transform duration-300 hover:neon-glow">
+<div class="flex justify-between items-start mb-6">
+<div class="casino-chip-small group-hover:rotate-180 transition-transform duration-500"><span class="material-symbols-outlined text-secondary-fixed">home_iot_device</span></div>
+<span class="font-mono-data text-[12px] text-primary-container border border-primary-container px-2 py-1 rounded">IoT &amp; AI</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Smart Home Voice Assistant</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Integration of Whisper and GPT. Assistente de voz imersivo com processamento natural avançado.</p>
+</div>
+<!-- Project 5 -->
+<div class="glass-panel rounded-xl p-8 group hover:-translate-y-2 transition-transform duration-300 hover:neon-glow">
+<div class="flex justify-between items-start mb-6">
+<div class="casino-chip-small group-hover:rotate-180 transition-transform duration-500"><span class="material-symbols-outlined text-secondary-fixed">health_metrics</span></div>
+<span class="font-mono-data text-[12px] text-primary-container border border-primary-container px-2 py-1 rounded">HealthTech</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Predictive Health Dashboard</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Data analysis for healthcare. Modelos preditivos para monitoramento e análise de métricas de saúde.</p>
+</div>
+<!-- Project 6 -->
+<div class="glass-panel rounded-xl p-8 group hover:-translate-y-2 transition-transform duration-300 hover:neon-glow">
+<div class="flex justify-between items-start mb-6">
+<div class="casino-chip-small group-hover:rotate-180 transition-transform duration-500"><span class="material-symbols-outlined text-secondary-fixed">enhanced_encryption</span></div>
+<span class="font-mono-data text-[12px] text-primary-container border border-primary-container px-2 py-1 rounded">Web3 &amp; Security</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Blockchain Identity Verifier</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Security and AI integration. Validação de identidade utilizando contratos inteligentes e biometria IA.</p>
+</div>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="reveal scroll-mt-32" id="timeline">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-16 flex items-center gap-3 border-b border-outline-variant/30 pb-4 text-center md:text-left justify-center md:justify-start">
+<span class="material-symbols-outlined text-primary-container">linear_scale</span> Timeline Acadêmica
+</h2>
+<div class="relative max-w-4xl mx-auto py-8">
+<div class="timeline-line"></div>
+<!-- Timeline Item 1 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-16">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-primary-container bg-surface-dim z-10 absolute left-[2px] md:left-1/2 transform -translate-x-1/2 group-hover:scale-125 group-hover:bg-primary-container group-hover:text-surface-dim transition-all duration-300">
+<span class="material-symbols-outlined text-[20px]">flag</span>
+</div>
+<div class="w-[calc(100%-3rem)] md:w-5/12 pl-8 md:pl-0 md:pr-12 md:text-right ml-auto md:ml-0 group-odd:ml-auto group-odd:pl-8 group-odd:md:pl-12 group-odd:md:pr-0 group-odd:md:text-left">
+<div class="glass-panel p-6 rounded-xl hover:neon-glow transition-all duration-300">
+<span class="font-mono-data text-secondary-fixed text-sm mb-2 block">Módulo 1</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Início do Curso</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Fundamentos de lógica de programação e introdução ao ecossistema Python.</p>
+</div>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-16">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-secondary-fixed bg-surface-dim z-10 absolute left-[2px] md:left-1/2 transform -translate-x-1/2 group-hover:scale-125 group-hover:bg-secondary-fixed group-hover:text-surface-dim transition-all duration-300">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+</div>
+<div class="w-[calc(100%-3rem)] md:w-5/12 pl-8 md:pl-0 md:pr-12 md:text-right ml-auto md:ml-0 group-odd:ml-auto group-odd:pl-8 group-odd:md:pl-12 group-odd:md:pr-0 group-odd:md:text-left">
+<div class="glass-panel p-6 rounded-xl hover:neon-glow transition-all duration-300">
+<span class="font-mono-data text-secondary-fixed text-sm mb-2 block">Módulo 2</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Aprofundamento IA</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Estudos aplicados em Machine Learning e integração de APIs de Inteligência Artificial.</p>
+</div>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group mb-16">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-primary-container bg-surface-dim z-10 absolute left-[2px] md:left-1/2 transform -translate-x-1/2 group-hover:scale-125 group-hover:bg-primary-container group-hover:text-surface-dim transition-all duration-300">
+<span class="material-symbols-outlined text-[20px]">build</span>
+</div>
+<div class="w-[calc(100%-3rem)] md:w-5/12 pl-8 md:pl-0 md:pr-12 md:text-right ml-auto md:ml-0 group-odd:ml-auto group-odd:pl-8 group-odd:md:pl-12 group-odd:md:pr-0 group-odd:md:text-left">
+<div class="glass-panel p-6 rounded-xl hover:neon-glow transition-all duration-300">
+<span class="font-mono-data text-secondary-fixed text-sm mb-2 block">Módulo 3</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Projetos Práticos</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Desenvolvimento dos projetos principais, focando em automação e soluções preditivas.</p>
+</div>
+</div>
+</div>
+<!-- Timeline Item 4 -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-secondary-fixed bg-surface-dim z-10 absolute left-[2px] md:left-1/2 transform -translate-x-1/2 group-hover:scale-125 group-hover:bg-secondary-fixed group-hover:text-surface-dim transition-all duration-300">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+</div>
+<div class="w-[calc(100%-3rem)] md:w-5/12 pl-8 md:pl-0 md:pr-12 md:text-right ml-auto md:ml-0 group-odd:ml-auto group-odd:pl-8 group-odd:md:pl-12 group-odd:md:pr-0 group-odd:md:text-left">
+<div class="glass-panel p-6 rounded-xl hover:neon-glow transition-all duration-300">
+<span class="font-mono-data text-secondary-fixed text-sm mb-2 block">Final</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Conclusão</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Entrega do portfólio acadêmico e certificação pelo SENAI Ary Torres (48h).</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Studies / Matérias -->
+<section class="reveal scroll-mt-32" id="studies">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-12 flex items-center gap-3 border-b border-outline-variant/30 pb-4">
+<span class="material-symbols-outlined text-primary-container">school</span> Matérias (Studies)
+             </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="glass-panel rounded-xl p-8 relative group hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined card-suit transition-transform group-hover:scale-110">psychology</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Machine Learning</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Fundamentos de aprendizado de máquina e algoritmos preditivos.</p>
+<div class="mt-6 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+<span class="font-mono-data text-mono-data text-secondary-fixed">Ativo</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel rounded-xl p-8 relative group hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined card-suit transition-transform group-hover:scale-110">code</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Prompt Engineering</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Otimização de interações com modelos de linguagem de grande escala.</p>
+<div class="mt-6 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+<span class="font-mono-data text-mono-data text-secondary-fixed">Ativo</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel rounded-xl p-8 relative group hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined card-suit transition-transform group-hover:scale-110">terminal</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Python Dev</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Desenvolvimento backend e scripts de automação robustos.</p>
+<div class="mt-6 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+<span class="font-mono-data text-mono-data text-secondary-fixed">Concluído</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-12 flex flex-col md:flex-row justify-between items-center px-margin-desktop gap-gutter border-t border-outline-variant/20 mt-32">
+<div class="font-headline-md text-headline-md text-primary">Henrique Ulbricht</div>
+<div class="font-body-md text-body-md text-secondary-fixed">© 2024 Henrique Ulbricht. Innovation at Stake.</div>
+<div class="flex gap-6">
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-tertiary-fixed-variant hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+</div>
+</footer>
+</main>
+<script>
+        // Typewriter Effect
+        const text = "IA Generativa Aplicada à Programação | ChatGPT";
+        const typewriterElement = document.getElementById('typewriter');
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                typewriterElement.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, 50); // Typing speed
+            }
+        }
+        
+        // Start typing slightly after load
+        setTimeout(type, 500);
+
+        // Scroll Reveal Logic
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Trigger on load
+
+        // Floating Particles Background (Lightweight)
+        const particlesContainer = document.getElementById('particles-container');
+        const particleCount = 20;
+
+        for (let i = 0; i < particleCount; i++) {
+            createParticle();
+        }
+
+        function createParticle() {
+            const particle = document.createElement('div');
+            
+            // Randomize properties
+            const size = Math.random() * 4 + 1;
+            const xPos = Math.random() * 100;
+            const delay = Math.random() * 5;
+            const duration = Math.random() * 10 + 10;
+            
+            // Style
+            particle.style.position = 'absolute';
+            particle.style.bottom = '-10px';
+            particle.style.left = `${xPos}vw`;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.backgroundColor = Math.random() > 0.5 ? '#C00000' : '#FFD700';
+            particle.style.borderRadius = '50%';
+            particle.style.opacity = Math.random() * 0.5 + 0.1;
+            particle.style.filter = 'blur(1px)';
+            
+            // Animation
+            particle.animate([
+                { transform: 'translateY(0) scale(1)', opacity: particle.style.opacity },
+                { transform: `translateY(-100vh) translateX(${Math.random() * 50 - 25}px) scale(0)`, opacity: 0 }
+            ], {
+                duration: duration * 1000,
+                delay: delay * 1000,
+                iterations: Infinity,
+                easing: 'linear'
+            });
+            
+            particlesContainer.appendChild(particle);
+        }
+    </script>
+</body></html>
